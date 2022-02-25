@@ -1,5 +1,6 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import { NFTCollectionDynamoTable } from './Resources/DynamoNFTCollection';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class NftCollectionCdkStack extends Stack {
@@ -8,9 +9,8 @@ export class NftCollectionCdkStack extends Stack {
 
     // The code that defines your stack goes here
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'NftCollectionCdkQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    new NFTCollectionDynamoTable(this)
   }
 }
+
+
